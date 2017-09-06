@@ -1,0 +1,11 @@
+/lib/
+node_modules/
+dist
+*.swp
+.DS_Store
+npm-debug.log
+static/
+.env
+.idea
+newrelic_agent.log
+.tm_properties

@@ -1,0 +1,50 @@
+{
+  "name": "react-starter",
+  "version": "1.0.0",
+  "description": "Template for React implementations",
+  "main": "index.js",
+  "dependencies": {
+    "concurrently": "^3.5.0",
+    "express": "^4.15.4"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "babel-register": "^6.26.0",
+    "mocha": "^3.5.0",
+    "webpack": "^3.5.5"
+  },
+  "scripts": {
+    "build": "babel src/server -d dist/server",
+    "clean": "rm -rf ./dist",
+    "postinstall": "webpack --config config/webpack.config.js",
+    "serve": "node dist/server/server.js",
+    "start": "concurrently --kill-others \"webpack --config config/webpack.config.js --watch --colors\" \"nodemon src/server/server.js --exec babel-node\"",
+    "tests-server": "mocha tests/server --compilers js:babel-register",
+    "webpack": "webpack --config config/webpack.config.js",
+    "webpack-watch": "webpack --config config/webpack.config.js --watch --colors",
+    "debug-vscode": "PORT=1337 node --debug-brk=5858 --nolazy --harmony src/server/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EricGrudzien/react-starter.git"
+  },
+  "keywords": [
+    "babel",
+    "webpack",
+    "react",
+    "redux",
+    "node",
+    "express"
+  ],
+  "author": "Eric Grudzien",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EricGrudzien/react-starter/issues"
+  },
+  "homepage": "https://github.com/EricGrudzien/react-starter#readme"
+}
