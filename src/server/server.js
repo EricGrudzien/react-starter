@@ -1,13 +1,4 @@
-/* import http from 'http';
-
-http.createServer((req, res) => {
-  res.writeHead(200, {'Content-Type': 'text/plain'});
-  res.end('Hello World\n');
-}).listen(1337, '127.0.0.1');
-
-console.log('Server running at http://127.0.0.1:1337/');
-*/
-
+// eslint-disable-next-line jsx-a11y/href-no-hash
 import path from 'path';
 import Express from 'express';
 
@@ -31,5 +22,6 @@ app.get('/', (req, res) => {
 server = app.listen(process.env.PORT || 1337, () => {
   var port = server.address().port;
 
+  // eslint-disable-next-line no-console
   console.log('Server is listening at %s', port);
 });

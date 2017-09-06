@@ -40,7 +40,8 @@ Commands
         https://github.com/webpack/webpack/blob/master/examples/source-map/webpack.config.js
         https://github.com/risingstack/react-way-getting-started
 
-
+    Examples
+        https://github.com/webpack/webpack/tree/master/examples
     
 
     #Install Express
@@ -51,12 +52,21 @@ Commands
 
     #old:  "start": "nodemon src/server.js --exec babel-node",
 
+    #Install ESLint
+
+    $ npm install --save-dev eslint-config-airbnb eslint eslint-plugin-jsx-a11y eslint-plugin-import eslint-plugin-react
+
+    See:
+        https://www.npmjs.com/package/eslint-config-airbnb
+        https://www.sitepoint.com/up-and-running-with-eslint-the-pluggable-javascript-linter/
+
+
     Commands
     npm start
     npm run build
     npm run serve
     npm run tests-server
-
+    npm run lint            (note, only covers src directory)
 
 Notes:
 
@@ -78,4 +88,9 @@ npm install --save-dev babel-plugin-transform-runtime
 
 npm install --save babel-runtime
 
-For debuggering, see index.js (root)
+
+Running Script with NPM
+https://blog.jayway.com/2014/03/28/running-scripts-with-npm/
+
+
+For debugging comments, see index.js (root)

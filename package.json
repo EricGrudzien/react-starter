@@ -15,12 +15,18 @@
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
     "babel-register": "^6.26.0",
+    "eslint": "^4.6.1",
+    "eslint-config-airbnb": "^15.1.0",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-jsx-a11y": "^6.0.2",
+    "eslint-plugin-react": "^7.3.0",
     "mocha": "^3.5.0",
     "webpack": "^3.5.5"
   },
   "scripts": {
     "build": "babel src/server -d dist/server",
     "clean": "rm -rf ./dist",
+    "lint": "eslint src/.",
     "postinstall": "webpack --config config/webpack.config.js",
     "serve": "node dist/server/server.js",
     "start": "concurrently --kill-others \"webpack --config config/webpack.config.js --watch --colors\" \"nodemon src/server/server.js --exec babel-node\"",
