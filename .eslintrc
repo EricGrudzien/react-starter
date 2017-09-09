@@ -1,4 +1,9 @@
 {
+  "parser": "babel-eslint",
+  "env": {
+    "browser": true,
+    "node": true
+  },
   "extends": "airbnb",
   "rules": {
     "max-len": [2, 120],
@@ -6,6 +11,14 @@
     "vars-on-top": [0]
   },
   "plugins": [
+      "react",
+      "jsx-a11y",
       "import"
-  ]
+  ],
+  "parserOptions": {
+    "ecmaFeatures": {
+        "jsx": true
+    },
+    "ecmaVersion": 6
+  }
 }

@@ -15,6 +15,7 @@ Reference these guides for set-up:
 
 
 Commands
+
     #Install Babel
     $ npm install --save-dev babel-cli
 
@@ -22,6 +23,7 @@ Commands
 
     $ npm install --save-dev babel-preset-env babel-preset-stage-0
         note:  '{ "presets": ["latest"] }' to '{ "presets": ["env"] }
+
 
     #install Nodemon
     $ npm install --save-dev nodemon
@@ -31,6 +33,7 @@ Commands
     $ npm install --save-dev mocha
 
     $ npm install --save-dev babel-register
+
 
     # Install webpack
     $ npm install --save-dev webpack
@@ -47,6 +50,7 @@ Commands
     #Install Express
     $ npm install --save express
 
+
     #Install concurrently
     $ npm install concurrently --save
 
@@ -59,6 +63,41 @@ Commands
     See:
         https://www.npmjs.com/package/eslint-config-airbnb
         https://www.sitepoint.com/up-and-running-with-eslint-the-pluggable-javascript-linter/
+
+    $ npm install --save-dev babel-eslint
+
+    #Install React
+    $ npm install --save react react-dom
+    
+        Issues with Linting
+            resolved by installing new npm package (babel-eslint)
+            resolved by undating .babelrc
+            resolved by updating webpack.config.js
+                https://stackoverflow.com/questions/34678314/webpack-cant-find-module-if-file-named-jsx 
+                [0] ERROR in Entry module not found: Error: Can't resolve '/Users/ericgrudzien/Git/Starters/react-starter/src/client/scripts/client.js' in '/Users/ericgrudzien/Git/Starters/react-starter'
+
+            resolved by updating .eslintrc
+                https://stackoverflow.com/questions/41858052/solving-linter-error-no-undef-for-document
+
+            resolved by updating webpack.confi.js
+
+                 { test: /\.jsx$/, loader: 'babel-loader', exclude: '/node_modules/' },
+
+
+                [0] ERROR in ./src/client/scripts/client.jsx
+                [0] Module parse failed: /Users/ericgrudzien/Git/Starters/react-starter/src/client/scripts/client.jsx Unexpected token (6:16)
+                [0] You may need an appropriate loader to handle this file type.
+                [0] | import LayoutView from '../../app/views/Landing';
+                [0] |
+                [0] | ReactDOM.render(<LayoutView />, document.getElementById('app'));
+
+                https://github.com/babel/babel-loader/issues/370
+           
+        For reference:
+        https://github.com/babel/babel-loader/#usage
+
+            
+            webpack --display-error-details
 
 
     Commands
@@ -94,3 +133,10 @@ https://blog.jayway.com/2014/03/28/running-scripts-with-npm/
 
 
 For debugging comments, see index.js (root)
+
+
+Learning lessons:
+
+You add brackets when the thing you are importing is not the default export in that module or file. In case of react, it's the default export.
+
+    import React, { Component } from 'react';

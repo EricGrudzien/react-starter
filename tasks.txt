@@ -1,0 +1,4 @@
+Production readiness
+    npm run build -- works, but need to pull in client application too
+    npm run serve -- works, but need to be able to access client files 
+    process env declariations
