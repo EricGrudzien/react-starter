@@ -99,6 +99,31 @@ Commands
             
             webpack --display-error-details
 
+    #Install css / scsss
+
+        $ npm install --save-dev sass-loader css-loader style-loader
+
+        $ npm install --save classnames
+
+        $ npm install --save-dev node-sass
+
+            [0] ERROR in ./node_modules/css-loader!./node_modules/sass-loader/lib/loader.js!./src/app/views/Landing/styles.scss
+            [0] Module build failed: Error: Cannot find module 'node-sass'
+
+        $ npm install --save-dev extract-text-webpack-plugin
+            (move styles to a css file in dist)
+
+         ### this took a long time.  require(xxx.scss) in React file did not resolve until using this in Webpack: css?modules 
+        See
+            https://www.jonathan-petitcolas.com/2015/05/15/howto-setup-webpack-on-es6-react-application-with-sass.html
+            https://github.com/webpack-contrib/extract-text-webpack-plugin
+            https://github.com/gajus/react-css-modules            
+            General Read:  https://survivejs.com/react/advanced-techniques/styling-react/
+            General  https://javascriptplayground.com/blog/2016/07/css-modules-webpack-react/ 
+
+            // To help identify where to look for resolving import or require statements
+            https://webpack.js.org/configuration/resolve/
+
 
     Commands
     npm start

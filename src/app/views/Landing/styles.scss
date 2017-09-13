@@ -1,0 +1,9 @@
+@import '~common/styles/common.scss';
+
+.container {
+  font-weight: bold;
+
+  .background {
+    background-color: $lime;
+  }
+}
